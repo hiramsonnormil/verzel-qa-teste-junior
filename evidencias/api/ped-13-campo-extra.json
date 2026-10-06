@@ -1,0 +1,45 @@
+{
+  "name": "ped-13-campo-extra",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310-100",
+      "telefone": "41984452986"
+    },
+    "itens": [
+      {
+        "produtoId": "P006",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 201,
+  "response": {
+    "numero": "VZ-963260",
+    "criadoEm": "2026-10-06T06:09:31.756Z",
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310100"
+    },
+    "itens": [
+      {
+        "produtoId": "P006",
+        "nome": "Kit 3 Pares de Meias",
+        "precoUnitario": 29.9,
+        "quantidade": 1,
+        "total": 29.9
+      }
+    ],
+    "subtotal": 29.9,
+    "desconto": 0,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 170.1,
+    "total": 49.8,
+    "cupom": null
+  }
+}

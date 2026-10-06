@@ -1,0 +1,31 @@
+{
+  "name": "ped-14-cep-letras",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "abcde-fgh"
+    },
+    "itens": [
+      {
+        "produtoId": "P006",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "DADOS_INVALIDOS",
+      "mensagem": "Existem campos inválidos no pedido.",
+      "campos": [
+        {
+          "campo": "cliente.cep",
+          "mensagem": "Informe um CEP com 8 dígitos."
+        }
+      ]
+    }
+  }
+}

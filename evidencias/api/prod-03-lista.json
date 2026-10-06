@@ -1,0 +1,65 @@
+{
+  "name": "prod-03-lista",
+  "method": "GET",
+  "path": "/produtos",
+  "request": null,
+  "status": 200,
+  "response": [
+    {
+      "id": "P001",
+      "nome": "Camiseta Essencial",
+      "descricao": "Algodão penteado e corte reto.",
+      "categoria": "Vestuário",
+      "preco": 59.9
+    },
+    {
+      "id": "P002",
+      "nome": "Calça Jeans Slim",
+      "descricao": "Jeans com elastano e lavagem escura.",
+      "categoria": "Vestuário",
+      "preco": 139.9
+    },
+    {
+      "id": "P003",
+      "nome": "Tênis Casual Urbano",
+      "descricao": "Solado de borracha e cabedal em lona.",
+      "categoria": "Calçados",
+      "preco": 189.9
+    },
+    {
+      "id": "P004",
+      "nome": "Boné Aba Curva",
+      "descricao": "Ajuste traseiro com fivela metálica.",
+      "categoria": "Acessórios",
+      "preco": 49.9
+    },
+    {
+      "id": "P005",
+      "nome": "Mochila Urbana 20L",
+      "descricao": "Compartimento acolchoado para notebook.",
+      "categoria": "Acessórios",
+      "preco": 100
+    },
+    {
+      "id": "P006",
+      "nome": "Kit 3 Pares de Meias",
+      "descricao": "Cano médio, algodão com reforço no calcanhar.",
+      "categoria": "Vestuário",
+      "preco": 29.9
+    },
+    {
+      "id": "P007",
+      "nome": "Jaqueta Corta-Vento",
+      "descricao": "Tecido leve e repelente à água.",
+      "categoria": "Vestuário",
+      "preco": 229.9
+    },
+    {
+      "id": "P008",
+      "nome": "Garrafa Térmica 750ml",
+      "descricao": "Mantém a temperatura por até 12 horas.",
+      "categoria": "Acessórios",
+      "preco": 50
+    }
+  ]
+}

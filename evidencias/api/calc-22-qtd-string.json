@@ -1,0 +1,21 @@
+{
+  "name": "calc-22-qtd-string",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": "2"
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "QUANTIDADE_INVALIDA",
+      "mensagem": "A quantidade deve ser um número inteiro maior ou igual a 1.",
+      "campo": "itens[0].quantidade"
+    }
+  }
+}

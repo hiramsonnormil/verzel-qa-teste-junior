@@ -1,0 +1,32 @@
+{
+  "name": "calc-23-qtd-gigante",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 999999
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 999999,
+        "total": 59899940.1
+      }
+    ],
+    "subtotal": 59899940.1,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 59899940.1,
+    "cupom": null
+  }
+}

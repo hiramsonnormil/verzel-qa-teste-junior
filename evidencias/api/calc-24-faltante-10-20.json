@@ -1,0 +1,43 @@
+{
+  "name": "calc-24-faltante-10-20",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P002",
+        "quantidade": 1
+      },
+      {
+        "produtoId": "P004",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P002",
+        "nome": "Calça Jeans Slim",
+        "precoUnitario": 139.9,
+        "quantidade": 1,
+        "total": 139.9
+      },
+      {
+        "produtoId": "P004",
+        "nome": "Boné Aba Curva",
+        "precoUnitario": 49.9,
+        "quantidade": 1,
+        "total": 49.9
+      }
+    ],
+    "subtotal": 189.8,
+    "desconto": 0,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 10.2,
+    "total": 209.7,
+    "cupom": null
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "ped-12-get-pedidos",
+  "method": "GET",
+  "path": "/pedidos",
+  "request": null,
+  "status": 405,
+  "response": {
+    "erro": {
+      "codigo": "METODO_NAO_PERMITIDO",
+      "mensagem": "O método GET não é permitido nesta rota."
+    }
+  }
+}

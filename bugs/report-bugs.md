@@ -30,6 +30,11 @@ A regra vale para a interface e para a API."
 **Resultado obtido:** HTTP 201 — pedido criado (`VZ-931714`) com 6 unidades de
 "Camiseta Essencial", subtotal R$ 359,40.
 
+**Agravante (bateria 2):** não há nenhum teto — `POST /api/carrinho/calcular`
+com quantidade `999999` retorna HTTP 200 com subtotal de **R$ 59.899.940,10**
+(`evidencias/api/calc-23-qtd-gigante.json`). A validação de máximo simplesmente
+não existe na API.
+
 **Observação:** `POST /api/carrinho/calcular` com quantidade 6 também retornou 200
 com o cálculo feito, sem erro. A validação existe para quantidade 0, negativa e
 decimal (422 `QUANTIDADE_INVALIDA`), mas o teto de 5 unidades não é aplicado.
@@ -61,6 +66,9 @@ grátis" enquanto cobra R$ 19,90 de frete. Indica comparação estrita (`>`) ond
 regra exige `>=`.
 
 **Evidência:** `evidencias/api/bug-02-calc-08-exato-200.json`
+(`evidencias/api/calc-25-200-com-cupom.json` mostra a mesma causa com
+`BEMVINDO10`: subtotal de R$ 200,00 antes do desconto, frete de R$ 19,90
+cobrado — contraria também o CA08.)
 
 ---
 

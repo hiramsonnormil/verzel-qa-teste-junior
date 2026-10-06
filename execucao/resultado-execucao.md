@@ -37,6 +37,30 @@ Ambiente: https://verzel-store.qa-test-verzel-store.workers.dev/
 
 **Resumo API:** 26 PASS, 2 FAIL (BUG-01 e BUG-02, detalhados em `bugs/report-bugs.md`).
 
+### Bateria 2 — casos-limite e robustez (16 chamadas, 06/10/2026)
+
+| # | Cenário | Esperado | Obtido | Status |
+|---|---------|----------|--------|--------|
+| calc-20 | Cupom `""` | 200, sem desconto, sem erro | idêntico (`cupom: null`) | ✅ PASS |
+| calc-21 | Cupom `"   "` (só espaços) | 200, sem desconto | idêntico (trim → vazio) | ✅ PASS |
+| calc-27 | Sem campo cupom | 200, sem desconto | idêntico | ✅ PASS |
+| calc-22 | Quantidade `"2"` (texto) | 422 QUANTIDADE_INVALIDA | idêntico | ✅ PASS |
+| calc-23 | Quantidade 999999 | 422 (teto de 5) | **200, subtotal R$ 59.899.940,10** | ❌ FAIL (BUG-01, sem teto) |
+| calc-24 | Subtotal 189,80 | faltam 10,20 | idêntico | ✅ PASS |
+| calc-26 | 3×49,90 + cupom (arredondamento) | total 154,63 | idêntico | ✅ PASS |
+| calc-25 | Subtotal 200 + BEMVINDO10 (CA08) | frete 0 | **frete 19,90** | ❌ FAIL (BUG-02, mesma causa) |
+| ped-11 | Corpo JSON inválido | 400 JSON_INVALIDO | idêntico | ✅ PASS |
+| ped-12 | GET /api/pedidos | 405 METODO_NAO_PERMITIDO | idêntico | ✅ PASS |
+| ped-13 | Campo extra no cliente | 201 (ignora extra) | VZ-963260 | ✅ PASS |
+| ped-14 | CEP com letras | 422 DADOS_INVALIDOS | idêntico (detalhe por campo) | ✅ PASS |
+| ped-15 | E-mail vazio | 422 DADOS_INVALIDOS | idêntico ("Informe o e-mail.") | ✅ PASS |
+| ped-16 | Nome de 1 letra | 422 DADOS_INVALIDOS | idêntico ("Informe nome e sobrenome.") | ✅ PASS |
+| prod-03 | GET /api/produtos | 8 produtos com schema completo | idêntico | ✅ PASS |
+
+**Resumo bateria 2:** 14 PASS, 2 FAIL — ambos são manifestações dos bugs já
+reportados (BUG-01 sem nenhum teto; BUG-02 também com cupom aplicado).
+Nenhum bug novo encontrado.
+
 ## 2. Execução exploratória na interface (06/10/2026)
 
 Percorrido no navegador: vitrine → carrinho → aplicação de cupom → checkout

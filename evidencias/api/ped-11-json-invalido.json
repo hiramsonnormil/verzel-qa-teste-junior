@@ -1,0 +1,13 @@
+{
+  "name": "ped-11-json-invalido",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": "{nao json",
+  "status": 400,
+  "response": {
+    "erro": {
+      "codigo": "JSON_INVALIDO",
+      "mensagem": "O corpo da requisição deve ser um objeto JSON válido."
+    }
+  }
+}
