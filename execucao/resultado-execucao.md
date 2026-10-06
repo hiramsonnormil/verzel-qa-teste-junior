@@ -37,11 +37,20 @@ Ambiente: https://verzel-store.qa-test-verzel-store.workers.dev/
 
 **Resumo API:** 26 PASS, 2 FAIL (BUG-01 e BUG-02, detalhados em `bugs/report-bugs.md`).
 
-## 2. Execução exploratória na interface
+## 2. Execução exploratória na interface (06/10/2026)
 
-Em andamento — os fluxos de vitrine, carrinho, aplicação de cupom na UI,
-validações visuais do checkout e a tela de confirmação estão sendo percorridos
-no navegador, com capturas de tela em `evidencias/ui/`.
+Percorrido no navegador: vitrine → carrinho → aplicação de cupom → checkout
+(sem finalizar pedido e sem enviar formulário). Captura em `evidencias/ui/`.
+
+| Passo | Observado | Status |
+|---|---|---|
+| Vitrine | Catálogo exibido; banner "Ambiente de teste técnico do processo seletivo de QA da Verzel" | ✅ PASS |
+| Carrinho: 1x Calça Jeans Slim (R$ 139,90) + 2x Boné Aba Curva (R$ 49,90) | Subtotal R$ 239,70, frete grátis, total R$ 239,70; controles de quantidade (-/+) e "Remover" por item | ✅ PASS |
+| Cupom BEMVINDO10 no carrinho | Mensagem "Cupom BEMVINDO10 aplicado"; desconto −R$ 23,97; total R$ 215,73 | ✅ PASS |
+| Cupom FAKE123 no carrinho | Mensagem "Cupom inválido."; nenhum desconto; total R$ 239,70 | ✅ PASS |
+| Tela de checkout | Formulário "Dados para entrega": Nome completo, E-mail, CEP (dica "Somente números ou no formato 00000-000"); texto "O pagamento é feito na entrega."; botão "Confirmar pedido" (não clicado) | ✅ PASS |
+
+Nenhum pedido foi finalizado e nenhum formulário foi enviado na interface.
 
 ## 3. Automação Playwright
 
