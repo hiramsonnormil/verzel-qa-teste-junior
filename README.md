@@ -14,6 +14,7 @@ conforme a [documentação da entrega](https://verzel-store.qa-test-verzel-store
 | Report de bugs | `bugs/report-bugs.md` — 2 bugs com severidade, passos, esperado × obtido |
 | Evidências | `evidencias/api/` (respostas JSON) e `evidencias/ui/` (capturas de tela) |
 | Automação Playwright (≥ 3 cenários) | `automacao/tests/` — 9 testes E2E |
+| Relatório visual da execução | `relatorio/relatorio.pdf` — relatório em PDF com KPIs, gráfico, bugs, tabelas de cenários e captura de tela |
 | Este README | aqui |
 
 ## Como rodar a automação
