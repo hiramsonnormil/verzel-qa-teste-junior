@@ -1,0 +1,42 @@
+{
+  "name": "ped-08-qtd-6",
+  "status": 201,
+  "request": {
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 6
+      }
+    ]
+  },
+  "response": {
+    "numero": "VZ-931714",
+    "criadoEm": "2026-10-06T05:38:50.226Z",
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310100"
+    },
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 6,
+        "total": 359.4
+      }
+    ],
+    "subtotal": 359.4,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 359.4,
+    "cupom": null
+  }
+}

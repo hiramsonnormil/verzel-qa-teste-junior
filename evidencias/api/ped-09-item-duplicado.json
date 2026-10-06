@@ -1,0 +1,30 @@
+{
+  "name": "ped-09-item-duplicado",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Maria Silva",
+      "email": "maria@exemplo.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      },
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "ITEM_DUPLICADO",
+      "mensagem": "O produto P001 aparece mais de uma vez.",
+      "campo": "itens[1].produtoId"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "calc-12-qtd-6",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 6
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 6,
+        "total": 359.4
+      }
+    ],
+    "subtotal": 359.4,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 359.4,
+    "cupom": null
+  }
+}

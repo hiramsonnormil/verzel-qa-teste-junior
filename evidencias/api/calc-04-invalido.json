@@ -1,0 +1,35 @@
+{
+  "name": "calc-04-invalido",
+  "status": 200,
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      }
+    ],
+    "cupom": "FAKE123"
+  },
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 1,
+        "total": 59.9
+      }
+    ],
+    "subtotal": 59.9,
+    "desconto": 0,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 140.1,
+    "total": 79.8,
+    "cupom": {
+      "codigo": "FAKE123",
+      "aplicado": false,
+      "mensagem": "Cupom inválido."
+    }
+  }
+}

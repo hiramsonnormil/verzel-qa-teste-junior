@@ -1,0 +1,16 @@
+{
+  "name": "calc-14-itens-vazio",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": []
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "ITENS_OBRIGATORIOS",
+      "mensagem": "Informe ao menos um item.",
+      "campo": "itens"
+    }
+  }
+}

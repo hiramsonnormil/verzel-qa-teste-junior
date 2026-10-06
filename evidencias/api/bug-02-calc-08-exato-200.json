@@ -1,0 +1,30 @@
+{
+  "name": "calc-08-exato-200",
+  "status": 200,
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P005",
+        "quantidade": 2
+      }
+    ]
+  },
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P005",
+        "nome": "Mochila Urbana 20L",
+        "precoUnitario": 100,
+        "quantidade": 2,
+        "total": 200
+      }
+    ],
+    "subtotal": 200,
+    "desconto": 0,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 0,
+    "total": 219.9,
+    "cupom": null
+  }
+}

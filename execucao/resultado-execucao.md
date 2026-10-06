@@ -1,0 +1,49 @@
+# Resultado da execução — Entrega VZS-142
+
+Data: 06/10/2026
+Executor: Hiramson Normil
+Ambiente: https://verzel-store.qa-test-verzel-store.workers.dev/
+
+## 1. Execução via API (33 chamadas — evidências em `evidencias/api/`)
+
+| # | Cenário | Esperado | Obtido | Status |
+|---|---------|----------|--------|--------|
+| CT01 | Cupom BEMVINDO10 em 139,90 + 2×49,90 | desc 23,97 / frete 0 / total 215,73 | idêntico | ✅ PASS |
+| CT02 | Cupom "bemvindo10" (minúsculas) | aplica 10% | aplicado, total 73,81 | ✅ PASS |
+| CT03 | Cupom "  BEMVINDO10  " (espaços) | aplica 10% | aplicado | ✅ PASS |
+| CT04 | Cupom "FAKE123" no calcular | 200 + "Cupom inválido." | idêntico | ✅ PASS |
+| CT05 | Cupom "VERAO2026" no calcular | 200 + "Cupom expirado." | idêntico | ✅ PASS |
+| CT10 | Subtotal 59,90 | frete 19,90 + faltam 140,10 | idêntico | ✅ PASS |
+| CT11 | Subtotal exato 200,00 | frete 0 | **frete 19,90** | ❌ FAIL (BUG-02) |
+| CT12 | Subtotal 229,90 | frete 0 | idêntico | ✅ PASS |
+| CT13 | Subtotal 219,80 + cupom (CA08) | frete 0, total 197,82 | idêntico | ✅ PASS |
+| CT14 | 59,90 + cupom (CA09) | total 73,81 | idêntico | ✅ PASS |
+| CT16 | 5 unidades | aceito | subtotal 299,50 | ✅ PASS |
+| CT17 | 6 unidades no pedido | 422 QUANTIDADE_MAXIMA_EXCEDIDA | **201, pedido criado** | ❌ FAIL (BUG-01) |
+| CT18a | Quantidade 0 | 422 QUANTIDADE_INVALIDA | idêntico | ✅ PASS |
+| CT18b | Quantidade -2 | 422 QUANTIDADE_INVALIDA | idêntico | ✅ PASS |
+| CT18c | Quantidade 1.5 | 422 QUANTIDADE_INVALIDA | idêntico | ✅ PASS |
+| CT19 | Produto duplicado | 422 ITEM_DUPLICADO | idêntico | ✅ PASS |
+| CT20 | Produto P999 | 422 PRODUTO_NAO_ENCONTRADO | idêntico | ✅ PASS |
+| CT21 | Itens vazio | 422 ITENS_OBRIGATORIOS | idêntico | ✅ PASS |
+| CT22 | Pedido válido + cupom | 201 VZ-000000, total 109,90 | VZ-872027, idêntico | ✅ PASS |
+| CT23 | Pedido + cupom inválido | 422 CUPOM_INVALIDO | idêntico | ✅ PASS |
+| CT24 | Pedido + cupom expirado | 422 CUPOM_EXPIRADO | idêntico | ✅ PASS |
+| CT25 | Nome sem sobrenome | 422 DADOS_INVALIDOS | idêntico | ✅ PASS |
+| CT26 | E-mail inválido | 422 DADOS_INVALIDOS | idêntico | ✅ PASS |
+| CT27 | CEP 7 dígitos | 422 DADOS_INVALIDOS | idêntico | ✅ PASS |
+| CT28 | CEP sem hífen | 201 | 201 (VZ-129804) | ✅ PASS |
+| CT29 | GET /api/produtos/P999 | 404 PRODUTO_NAO_ENCONTRADO | idêntico | ✅ PASS |
+
+**Resumo API:** 26 PASS, 2 FAIL (BUG-01 e BUG-02, detalhados em `bugs/report-bugs.md`).
+
+## 2. Execução exploratória na interface
+
+Em andamento — os fluxos de vitrine, carrinho, aplicação de cupom na UI,
+validações visuais do checkout e a tela de confirmação estão sendo percorridos
+no navegador, com capturas de tela em `evidencias/ui/`.
+
+## 3. Automação Playwright
+
+Suíte em `automacao/tests/` (9 testes, incluindo 1 marcado como falha conhecida —
+BUG-02). Execução: ver `automacao/README.md`.

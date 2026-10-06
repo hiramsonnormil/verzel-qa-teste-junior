@@ -1,0 +1,27 @@
+{
+  "name": "ped-03-cupom-expirado",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Maria Silva",
+      "email": "maria@exemplo.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P005",
+        "quantidade": 1
+      }
+    ],
+    "cupom": "VERAO2026"
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "CUPOM_EXPIRADO",
+      "mensagem": "Cupom expirado.",
+      "campo": "cupom"
+    }
+  }
+}

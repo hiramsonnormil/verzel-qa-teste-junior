@@ -1,0 +1,25 @@
+{
+  "name": "calc-16-item-duplicado",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      },
+      {
+        "produtoId": "P001",
+        "quantidade": 2
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "ITEM_DUPLICADO",
+      "mensagem": "O produto P001 aparece mais de uma vez.",
+      "campo": "itens[1].produtoId"
+    }
+  }
+}

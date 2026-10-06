@@ -1,0 +1,37 @@
+{
+  "name": "calc-03-espacos",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 1
+      }
+    ],
+    "cupom": "  BEMVINDO10  "
+  },
+  "status": 200,
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 1,
+        "total": 59.9
+      }
+    ],
+    "subtotal": 59.9,
+    "desconto": 5.99,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 140.1,
+    "total": 73.81,
+    "cupom": {
+      "codigo": "BEMVINDO10",
+      "aplicado": true,
+      "mensagem": "Cupom aplicado: 10% de desconto nos produtos."
+    }
+  }
+}

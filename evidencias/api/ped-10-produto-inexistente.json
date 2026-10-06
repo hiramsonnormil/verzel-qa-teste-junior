@@ -1,0 +1,26 @@
+{
+  "name": "ped-10-produto-inexistente",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Maria Silva",
+      "email": "maria@exemplo.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P999",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "PRODUTO_NAO_ENCONTRADO",
+      "mensagem": "Produto P999 não encontrado.",
+      "campo": "itens[0].produtoId"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "prod-01",
+  "method": "GET",
+  "path": "/produtos/P001",
+  "status": 200,
+  "response": {
+    "id": "P001",
+    "nome": "Camiseta Essencial",
+    "descricao": "Algodão penteado e corte reto.",
+    "categoria": "Vestuário",
+    "preco": 59.9
+  }
+}

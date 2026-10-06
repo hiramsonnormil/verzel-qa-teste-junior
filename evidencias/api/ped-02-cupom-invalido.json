@@ -1,0 +1,27 @@
+{
+  "name": "ped-02-cupom-invalido",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Maria Silva",
+      "email": "maria@exemplo.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P005",
+        "quantidade": 1
+      }
+    ],
+    "cupom": "FAKE123"
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "CUPOM_INVALIDO",
+      "mensagem": "Cupom inválido.",
+      "campo": "cupom"
+    }
+  }
+}

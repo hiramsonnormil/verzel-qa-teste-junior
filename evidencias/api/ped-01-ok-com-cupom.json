@@ -1,0 +1,47 @@
+{
+  "name": "ped-01-ok-com-cupom",
+  "status": 201,
+  "request": {
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P005",
+        "quantidade": 1
+      }
+    ],
+    "cupom": "BEMVINDO10"
+  },
+  "response": {
+    "numero": "VZ-872027",
+    "criadoEm": "2026-10-06T05:38:28.049Z",
+    "cliente": {
+      "nome": "Hiramson Normil",
+      "email": "hiramsonnormil00@gmail.com",
+      "cep": "01310100"
+    },
+    "itens": [
+      {
+        "produtoId": "P005",
+        "nome": "Mochila Urbana 20L",
+        "precoUnitario": 100,
+        "quantidade": 1,
+        "total": 100
+      }
+    ],
+    "subtotal": 100,
+    "desconto": 10,
+    "frete": 19.9,
+    "freteGratis": false,
+    "valorFaltanteFreteGratis": 100,
+    "total": 109.9,
+    "cupom": {
+      "codigo": "BEMVINDO10",
+      "aplicado": true,
+      "mensagem": "Cupom aplicado: 10% de desconto nos produtos."
+    }
+  }
+}

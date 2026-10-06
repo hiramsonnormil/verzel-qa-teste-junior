@@ -1,0 +1,12 @@
+{
+  "name": "prod-02",
+  "method": "GET",
+  "path": "/produtos/P999",
+  "status": 404,
+  "response": {
+    "erro": {
+      "codigo": "PRODUTO_NAO_ENCONTRADO",
+      "mensagem": "Produto P999 não encontrado."
+    }
+  }
+}

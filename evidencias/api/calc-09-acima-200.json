@@ -1,0 +1,32 @@
+{
+  "name": "calc-09-acima-200",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P007",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 200,
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P007",
+        "nome": "Jaqueta Corta-Vento",
+        "precoUnitario": 229.9,
+        "quantidade": 1,
+        "total": 229.9
+      }
+    ],
+    "subtotal": 229.9,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 229.9,
+    "cupom": null
+  }
+}

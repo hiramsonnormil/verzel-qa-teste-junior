@@ -1,0 +1,30 @@
+{
+  "name": "calc-13-qtd-5-ok",
+  "status": 200,
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "quantidade": 5
+      }
+    ]
+  },
+  "response": {
+    "itens": [
+      {
+        "produtoId": "P001",
+        "nome": "Camiseta Essencial",
+        "precoUnitario": 59.9,
+        "quantidade": 5,
+        "total": 299.5
+      }
+    ],
+    "subtotal": 299.5,
+    "desconto": 0,
+    "frete": 0,
+    "freteGratis": true,
+    "valorFaltanteFreteGratis": 0,
+    "total": 299.5,
+    "cupom": null
+  }
+}

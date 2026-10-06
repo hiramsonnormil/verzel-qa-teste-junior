@@ -1,0 +1,31 @@
+{
+  "name": "ped-05-email-invalido",
+  "method": "POST",
+  "path": "/pedidos",
+  "request": {
+    "cliente": {
+      "nome": "Maria Silva",
+      "email": "maria@",
+      "cep": "01310-100"
+    },
+    "itens": [
+      {
+        "produtoId": "P005",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "DADOS_INVALIDOS",
+      "mensagem": "Existem campos inválidos no pedido.",
+      "campos": [
+        {
+          "campo": "cliente.email",
+          "mensagem": "Informe um e-mail válido."
+        }
+      ]
+    }
+  }
+}

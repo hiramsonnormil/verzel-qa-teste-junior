@@ -1,0 +1,21 @@
+{
+  "name": "calc-15-produto-inexistente",
+  "method": "POST",
+  "path": "/carrinho/calcular",
+  "request": {
+    "itens": [
+      {
+        "produtoId": "P999",
+        "quantidade": 1
+      }
+    ]
+  },
+  "status": 422,
+  "response": {
+    "erro": {
+      "codigo": "PRODUTO_NAO_ENCONTRADO",
+      "mensagem": "Produto P999 não encontrado.",
+      "campo": "itens[0].produtoId"
+    }
+  }
+}
