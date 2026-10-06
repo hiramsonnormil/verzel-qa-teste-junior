@@ -30,10 +30,12 @@ A regra vale para a interface e para a API."
 **Resultado obtido:** HTTP 201 — pedido criado (`VZ-931714`) com 6 unidades de
 "Camiseta Essencial", subtotal R$ 359,40.
 
-**Agravante (bateria 2):** não há nenhum teto — `POST /api/carrinho/calcular`
-com quantidade `999999` retorna HTTP 200 com subtotal de **R$ 59.899.940,10**
-(`evidencias/api/calc-23-qtd-gigante.json`). A validação de máximo simplesmente
-não existe na API.
+> **Este bug é pior do que parecia:** não se trata apenas de "aceitar 6 em vez
+> de 5" — **não existe nenhum teto na API**. `POST /api/carrinho/calcular` com
+> quantidade `999999` retorna HTTP 200 com subtotal de **R$ 59.899.940,10**
+> (`evidencias/api/calc-23-qtd-gigante.json`). Qualquer quantidade inteira
+> positiva é aceita, então um pedido real poderia ser criado com milhões de
+> unidades de um produto.
 
 **Observação:** `POST /api/carrinho/calcular` com quantidade 6 também retornou 200
 com o cálculo feito, sem erro. A validação existe para quantidade 0, negativa e
